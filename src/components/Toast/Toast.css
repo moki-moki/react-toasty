@@ -1,0 +1,117 @@
+.toast-container {
+  padding: 30px;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 20%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.toast-container__btn {
+  position: absolute;
+  top: 5%;
+  right: 1%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.toast-line {
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.feather {
+  min-width: 25px;
+  min-height: 25px;
+}
+
+.feather-x-dark {
+  stroke: #fefefe;
+}
+
+.feather-x-light {
+  stroke: #111111;
+}
+
+.error {
+  background-color: #d64747;
+}
+
+.info {
+  background-color: #325fd8;
+}
+
+.success {
+  background-color: #16c716;
+}
+
+.warning {
+  background-color: #f1c40f;
+}
+
+.light {
+  background-color: #eeeeee;
+  color: #111111;
+}
+
+.dark {
+  background-color: #111111;
+  color: #ecebeb;
+}
+
+.small {
+  padding: 20px;
+  font-size: 18px;
+}
+
+.medium {
+  padding: 40px;
+  font-size: 38px;
+}
+
+.large {
+  padding: 60px;
+  font-size: 58px;
+}
+
+@media (min-width: 600px) {
+  .toast-container {
+    max-width: 50%;
+  }
+}
+
+@keyframes toast-line-width {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes toast-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-fade-out {
+  100% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+}
