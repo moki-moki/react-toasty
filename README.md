@@ -11,9 +11,9 @@ Just a simple bare-bones Toast react component.
 
 ### TODO
 
-- [] Add more animations.
-- [] Custom colors.
-- [] Add pause on hover.
-- [] Add gravity so that user can decide on what corner toast will appear.
-- [] Add toast for promises.
-- [] Add more Tests.
+- [ ] Add more animations.
+- [ ] Custom colors.
+- [ ] Add pause on hover.
+- [ ] Add gravity so that user can decide on what corner toast will appear.
+- [ ] Add toast for promises.
+- [ ] Add more Tests.
