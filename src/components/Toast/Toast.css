@@ -8,8 +8,6 @@
   gap: 10px;
   overflow: hidden;
   position: fixed;
-  top: 1rem;
-  right: 1rem;
 }
 
 .toast-container__btn {
@@ -19,6 +17,29 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.toast-container__top-left,
+.toast-container__top-right {
+  top: 5%;
+}
+.toast-container__bottom-left,
+.toast-container__bottom-right {
+  bottom: 5%;
+}
+
+.toast-container__top-left {
+  left: 1%;
+}
+.toast-container__top-right {
+  right: 1%;
+}
+
+.toast-container__bottom-left {
+  left: 3%;
+}
+.toast-container__bottom-right {
+  right: 3%;
 }
 
 .toast-line {
@@ -97,7 +118,7 @@
   }
 }
 
-@keyframes toast-fade-in {
+@keyframes toast-fade-top-right {
   0% {
     opacity: 0;
     transform: translateX(100%);
@@ -109,9 +130,64 @@
   }
 }
 
-@keyframes toast-fade-out {
+@keyframes toast-fade-out-top-right {
   100% {
     transform: translateX(150%);
     opacity: 0;
+  }
+}
+
+@keyframes toast-fade-top-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-fade-out-top-left {
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes toast-fade-bottom-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes toast-fade-out-bottom-left {
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes toast-fade-bottom-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes toast-fade-out-bottom-right {
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }

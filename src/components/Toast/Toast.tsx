@@ -12,6 +12,7 @@ interface Props {
   theme?: "dark" | "light";
   type?: "warning" | "error" | "info" | "success";
   duration?: number;
+  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
 }
 
 const Toast = ({
@@ -19,6 +20,7 @@ const Toast = ({
   type = "info",
   theme = "light",
   duration = 3000,
+  position = "top-right",
 }: Props) => {
   const [render, setRender] = useState(true);
 
@@ -42,9 +44,9 @@ const Toast = ({
         <>
           {createPortal(
             <div
-              className={`${theme} ${type} toast-container`}
+              className={`${theme} ${type} toast-container toast-container__${position}`}
               style={{
-                animation: `toast-fade-in ${0.5}s linear, ${0.5}s toast-fade-out ${
+                animation: `toast-fade-${position} ${0.5}s linear, ${0.5}s toast-fade-out-${position} ${
                   convertToSeconds() + 0.5
                 }s forwards`,
               }}
