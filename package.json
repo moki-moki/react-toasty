@@ -1,7 +1,7 @@
 {
-  "name": "@moki-moki/simple-toast",
+  "name": "@moki-moki/react-toasty",
   "version": "0.0.1",
-  "description": "Simple toast library",
+  "description": "Simple toast library for react",
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
