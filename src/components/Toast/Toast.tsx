@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./Toast.css";
-import Checkmark from "../../assets/Checkmark";
-import ErrorIcon from "../../assets/ErrorIcon";
-import Warning from "../../assets/Warning";
-import InfoIcon from "../../assets/InfoIcon";
 import CloseIcon from "../../assets/CloseIcon";
+import Icon from "../Icon/Icon";
 
 interface Props {
   label?: string;
@@ -23,6 +20,7 @@ const Toast = ({
   position = "top-right",
 }: Props) => {
   const [render, setRender] = useState(true);
+  const toastContainerRef = useRef<HTMLDivElement>(null);
 
   const toastHandler = (): void => {
     setTimeout(() => {
@@ -30,7 +28,17 @@ const Toast = ({
     }, duration + 1000);
   };
 
-  const toastCloseHandler = (): void => setRender((prev) => (prev = false));
+  const toastClosingAnimation = (): void => {
+    if (null !== toastContainerRef.current)
+      toastContainerRef.current.style.animation = `toast-fade-out-${position} 3s forwards 0.5s`;
+  };
+
+  const toastCloseHandler = (): void => {
+    toastClosingAnimation();
+    setTimeout(() => {
+      setRender((prev) => (prev = false));
+    }, 10000);
+  };
 
   const convertToSeconds = (): number => duration / 1000;
 
@@ -44,6 +52,7 @@ const Toast = ({
         <>
           {createPortal(
             <div
+              ref={toastContainerRef}
               className={`${theme} ${type} toast-container toast-container__${position}`}
               style={{
                 animation: `toast-fade-${position} ${0.5}s linear, ${0.5}s toast-fade-out-${position} ${
@@ -58,10 +67,7 @@ const Toast = ({
               >
                 <CloseIcon theme={theme} />
               </button>
-              {type === "success" ? <Checkmark /> : null}
-              {type === "error" ? <ErrorIcon /> : null}
-              {type === "warning" ? <Warning /> : null}
-              {type === "info" ? <InfoIcon /> : null}
+              <Icon type={type} />
               <span>{label}</span>
               <div
                 className={`toast-line ${type}`}
