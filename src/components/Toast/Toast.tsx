@@ -3,11 +3,11 @@ import { createPortal } from "react-dom";
 import "./Toast.css";
 import CloseIcon from "../../assets/CloseIcon";
 import Icon from "../Icon/Icon";
+import { IconTypes } from "../../types";
 
-interface Props {
+interface Props extends IconTypes {
   label?: string;
   theme?: "dark" | "light";
-  type?: "warning" | "error" | "info" | "success";
   duration?: number;
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
 }
