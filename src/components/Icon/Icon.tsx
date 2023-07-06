@@ -1,10 +1,7 @@
 import React from "react";
+import { IconTypes } from "../../types";
 
-export interface IconProps {
-  type: "warning" | "error" | "info" | "success";
-}
-
-export type BuiltInIconProps = React.SVGProps<SVGElement> & IconProps;
+export type BuiltInIconProps = React.SVGProps<SVGElement> & IconTypes;
 
 const Svg: React.FC<BuiltInIconProps> = ({ type, children }) => (
   <svg
@@ -62,7 +59,7 @@ function Success(props: BuiltInIconProps) {
   );
 }
 
-function Icon({ type }: IconProps) {
+function Icon({ type }: IconTypes) {
   const iconProps = { type };
 
   if (type === "success") return Success(iconProps);
