@@ -6,7 +6,7 @@ export interface IconProps {
 
 export type BuiltInIconProps = React.SVGProps<SVGElement> & IconProps;
 
-const Svg: React.FC<BuiltInIconProps> = ({ type }) => (
+const Svg: React.FC<BuiltInIconProps> = ({ type, children }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -18,7 +18,9 @@ const Svg: React.FC<BuiltInIconProps> = ({ type }) => (
     strokeWidth="2"
     className={`feather feather-icon-${type}`}
     viewBox="0 0 24 24"
-  />
+  >
+    {children}
+  </svg>
 );
 
 function Info(props: BuiltInIconProps) {
