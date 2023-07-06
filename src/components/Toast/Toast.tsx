@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import "./Toast.css";
-import Checkmark from "../../assets/Checkmark";
-import ErrorIcon from "../../assets/ErrorIcon";
-import Warning from "../../assets/Warning";
-import InfoIcon from "../../assets/InfoIcon";
 import CloseIcon from "../../assets/CloseIcon";
+import Icon from "../Icon/Icon";
 
 interface Props {
   label?: string;
@@ -56,10 +53,7 @@ const Toast = ({
               >
                 <CloseIcon theme={theme} />
               </button>
-              {type === "success" ? <Checkmark /> : null}
-              {type === "error" ? <ErrorIcon /> : null}
-              {type === "warning" ? <Warning /> : null}
-              {type === "info" ? <InfoIcon /> : null}
+              <Icon type={type} />
               <span>{label}</span>
               <div
                 className={`toast-line ${type}`}

@@ -41,12 +41,28 @@
   stroke: #111111;
 }
 
+.feather-icon-error {
+  stroke: #d64747;
+}
+
+.feather-icon-warning {
+  stroke: #f1c40f;
+}
+
+.feather-icon-info {
+  stroke: #1c9ac4;
+}
+
+.feather-icon-success {
+  stroke: #16c716;
+}
+
 .error {
   background-color: #d64747;
 }
 
 .info {
-  background-color: #325fd8;
+  background-color: #1c9ac4;
 }
 
 .success {
