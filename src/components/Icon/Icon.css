@@ -1,0 +1,56 @@
+.feather {
+  min-width: 25px;
+  min-height: 25px;
+}
+
+.feather-x-dark {
+  stroke: #fefefe;
+}
+
+.feather-x-light {
+  stroke: #111111;
+}
+
+.feather-icon-error {
+  stroke: #d64747;
+}
+
+.feather-icon-warning {
+  stroke: #f1c40f;
+}
+
+.feather-icon-info {
+  stroke: #1c9ac4;
+}
+
+.feather-icon-success {
+  stroke: #16c716;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.spinner-dark {
+  border-color: #eeeeee;
+}
+
+.spinner-light {
+  border-color: #111111;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

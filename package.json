@@ -1,6 +1,6 @@
 {
   "name": "@moki-moki/react-toasty",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple toast library for react",
   "scripts": {
     "rollup": "rollup -c",
